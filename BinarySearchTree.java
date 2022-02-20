@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * print in inorder way, and get sorted list
  * 
@@ -83,6 +86,24 @@ public class BinarySearchTree {
         printInOrder(node.left);
         System.out.println(node.data);
         printInOrder(node.right);
+    }
 
+    public List<Integer> buildInorderArray() {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        return buildInorderArrayUtil(root, new ArrayList<>());
+    }
+
+    private List<Integer> buildInorderArrayUtil(BSTNode node, List<Integer> collector) {
+        
+        if (node == null) {
+            return collector;
+        }
+        buildInorderArrayUtil(node.left, collector);
+        collector.add(node.data);
+        buildInorderArrayUtil(node.right, collector);
+        
+        return collector;
     }
 }

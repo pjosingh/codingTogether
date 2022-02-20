@@ -1,4 +1,5 @@
 import java.time.Instant;
+import java.util.List;
 
 public class SortingUsingBinarySearch {
 
@@ -11,9 +12,9 @@ public class SortingUsingBinarySearch {
         // sort(target);   
         // print(target);
         long start = System.nanoTime();
-        //sortUsingBinarySearchTree(target);
-        sort(target);
-        print(target);
+        sortUsingBinarySearchTree(target);
+        //sort(target);
+        //print(target);
         long end = System.nanoTime();
 
         System.out.println("Consumed time: "+ (end-start));
@@ -38,7 +39,11 @@ public class SortingUsingBinarySearch {
         for (Integer el: target) {
             tree.insert(el);
         }
-        tree.print();
+        List<Integer> arr = tree.buildInorderArray();
+        for(Integer el: arr) {
+            System.out.print(el+" ");
+        }
+        System.out.println();
     }
 
 
