@@ -22,6 +22,10 @@ public class UsingBinarySearchTree {
         
 
         binarySearchTree.print();
+
+        System.out.println("10 :" + binarySearchTree.search(10));
+        System.out.println("100: " + binarySearchTree.search(100));
+        System.out.println("9: " + binarySearchTree.search(9));
     }
     
 }

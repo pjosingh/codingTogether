@@ -33,6 +33,34 @@ public class BinarySearchTree {
 
     // searching
     
+    /**
+     * 
+     * @param target - the value to search
+     * @return True if value is found, otherwise false
+     */
+    public boolean search(int target) {
+        if (root == null) {
+            return false;
+        }
+        return search(root, target);
+    }
+
+    private boolean search(BSTNode node, int target) {
+
+        if (node == null) {
+            return false;
+        }
+
+        if (node.data == target) {
+            return true;
+        }
+
+        if (target > node.data) {
+            return search(node.right, target);
+        } else {
+            return search(node.left, target);
+        }
+    }
 
     // printing
 
